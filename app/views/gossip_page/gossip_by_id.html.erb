@@ -1,0 +1,13 @@
+<h1 class="text-center">Gossip</h1>
+
+<div class="card text-center">
+  <div class="card-header">
+    <p>Author:</p><button type="button" class="btn btn-sm"><%= link_to("#{@gossip_id.user.first_name}", "user/#{@gossip_id.user.id}")%></button><br><br>
+
+  </div>
+  <div class="card-body">
+    <h3 class="card-title">Title: <%=@gossip_id.title%></h3>
+    <h5 class="card-title">Content: <%=@gossip_id.content%></h5>
+    <a href="/gossip" class="btn btn-primary">Home</a>
+  </div>
+</div>

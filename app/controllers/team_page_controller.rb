@@ -1,0 +1,2 @@
+class TeamPageController < ApplicationController
+end
