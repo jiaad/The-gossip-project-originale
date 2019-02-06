@@ -5,7 +5,7 @@ class GossipsController < ApplicationController
   
   def create
     
-    @gossip = Gossip.new(title: params[:title], content: params[:content], user_id: rand(1..10))
+    @gossip = Gossip.new(title: params[:title], content: params[:content], user_id: rand(40..48))
     if @gossip.save#(validate: false)
       redirect_to "/"
       flash[:success] = "ah we t trop fort"
