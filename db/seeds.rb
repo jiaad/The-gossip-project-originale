@@ -16,8 +16,16 @@
   city = City.create(name: Faker::Address.city, zip_code: Faker::Address.zip_code)
  end 
 
+#  t.string :first_name
+#  t.string :last_name
+#  t.string :email
+#  t.integer :age
+#  t.text :descryption
+#  t.references :city, index: true
+#  t.timestamps
+
 10.times do |i|
-  user = User.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, city: City.all.sample)
+  user = User.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email:Faker::Internet.email  ,age: rand(20..30) , descryption: Faker::HitchhikersGuideToTheGalaxy.marvin_quote, city: City.all.sample)
   #Gossip.create(content: Faker::Name.first_name)
 end
 

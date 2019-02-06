@@ -2,4 +2,10 @@
 
 <p> first_name: <%= @user.first_name%> </p>
 <p> last_name: <%= @user.last_name%> </p>
-<p> City  🏙: <%= @user.city.name%></p>
+<p>age: <%= @user.age %></p>
+<p>email:<strong> <%= @user.email %></strong><p>
+<p> City  🏙: <%= link_to "#{@user.city.name}", "/city/#{@user.city.id}" %></p>
+
+
+
+<p>descryption: <strong><%=@user.descryption %></strong></p>

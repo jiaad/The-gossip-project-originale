@@ -18,4 +18,27 @@ class GossipsController < ApplicationController
     end
   end
 
+  #new, #create, #show, #index, #edit, #update et #destroy
+  def show
+    i = params[:id].to_i
+    @gossip_id = Gossip.find(i)
+  end
+#===================
+  def index
+    @gossip = Gossip.all
+    @user = User.all
+  end
+#===================
+  def edit
+
+  end
+#===================
+  def update
+
+  end
+#===================
+  def destroy
+
+  end
+
 end

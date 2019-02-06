@@ -1,0 +1,25 @@
+<div class ="text-center">
+<h1>Bienvenue sur My Gossip</h1>
+
+<p>voici les Gossips:</p>
+
+
+
+<% @gossip.each_with_index do |gossip|%>
+
+
+ <div class="card ">
+  <div class="card-body">
+  <div class="card-header ">
+    <p class="card-text"><%=gossip.title %></p>
+  </div>
+  <div class="card-body ">
+    
+    <p class="card-text"><%=gossip.content%></p>
+    <p>Author:</p><button type="button" class="btn btn-sm"><%= link_to("#{gossip.user.first_name}", "gossips/user/#{gossip.user.id}")%></button><br><br>
+
+    <button type="button" class="btn btn-sm"><%= link_to("See more", "gossips/#{gossip.id}") %></button>
+    <hr>
+  </div>
+</div>
+<%end%>
