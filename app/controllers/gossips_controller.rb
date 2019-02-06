@@ -21,7 +21,11 @@ class GossipsController < ApplicationController
   #new, #create, #show, #index, #edit, #update et #destroy
   def show
     i = params[:id].to_i
-    @gossip_id = Gossip.find(i)
+    @gossip = Gossip.find(i)
+    
+    @comment = Comment.new
+    @comment.gossip_id = @gossip.id
+
   end
 #===================
   def index

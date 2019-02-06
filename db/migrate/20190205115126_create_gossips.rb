@@ -5,6 +5,8 @@ class CreateGossips < ActiveRecord::Migration[5.2]
       t.text :content
       # t.references :users, foreign_key: true
       t.belongs_to :user, index: true
+     # t.references :comment,  index: true
+      
 
       t.timestamps
     end

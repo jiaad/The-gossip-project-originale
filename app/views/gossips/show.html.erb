@@ -2,14 +2,19 @@
 
 <div class="card text-center">
   <div class="card-header">
-    <p>Author:</p><button type="button" class="btn btn-sm"><%= link_to("#{@gossip_id.user.first_name}", "user/#{@gossip_id.user.id}")%></button><br><br>
-    <p>Author City:<%= link_to "#{@gossip_id.user.city.name}", "city/#{@gossip_id.user.city.id}" %> </p>
+    <p>Author:</p><button type="button" class="btn btn-sm"><%= link_to("#{@gossip.user.first_name}", "user/#{@gossip.user.id}")%></button><br><br>
+    <p>Author City:<%= link_to "#{@gossip.user.city.name}", "city/#{@gossip.user.city.id}" %> </p>
   </div>
 
   <div class="card-body">
-    <h3 class="card-title">Title: <%=@gossip_id.title%></h3>
-    <h5 class="card-title">Content: <%=@gossip_id.content%></h5>
+    <h3 class="card-title">Title: <%=@gossip.title%></h3>
+    <h5 class="card-title">Content: <%=@gossip.content%></h5>
     <a href="/gossips" class="btn btn-primary">Home</a>
-    <button class="btn btn-xs btn-dark"><%= link_to 'Remove', @gossip_id, method: :delete, data: { confirm: 'Are you sure?' } %></button>
+    <button class="btn btn-xs btn-dark"><%= link_to 'Remove', @gossip, method: :delete, data: { confirm: 'Are you sure?' } %></button>
   </div>
 </div>
+
+<h1>Commentaires</h1>
+<h3>Comments</h3>
+<%= render partial: 'comments/form' %>
+<%= render partial: 'gossips/comment', collection: @gossip.comments.reverse %>
