@@ -8,4 +8,6 @@ class GossipPageController < ApplicationController
     i = params[:gossip_id].to_i
     @gossip_id = Gossip.find(i)
   end
+
+  
 end

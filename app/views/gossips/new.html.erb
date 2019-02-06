@@ -1,0 +1,27 @@
+<h1>Gossip#new</h1>
+<p>Find me in app/views/gossip/new.html.erb</p>
+
+<% if @gossip.errors.any? %>
+<div class="alert alert-danger text-center" role="alert">
+  oh emanuel macrooooon
+  oh teteu de connnnnn
+  oh va tout casser chez toiiiiii
+</div>
+<% else %>
+<% end %>
+
+<div class="container">
+<h1 class="pt-5"> Crée ton Gossip!</h1>
+  <%= form_tag url_for(action: 'create'), method: "post" do %>
+    <div class="form-group">
+      <%= label_tag 'Title' %>
+      <%= text_field_tag 'title', @gossip.title, class: 'form-control',  placeholder: "title : met ton titre morrau" %>
+    </div>
+    <div class="form-group">
+      <%= label_tag 'Content' %>
+      <%= text_area_tag 'content', @gossip.content, class: 'form-control', placeholder: "content : balance ton potin" %>
+    </div>
+
+      <%= submit_tag "Create Post", class: 'btn btn-default btn-dark text-light btn-submit' %>
+    <% end %>
+</div>
