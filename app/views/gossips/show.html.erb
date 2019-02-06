@@ -14,7 +14,24 @@
   </div>
 </div>
 
-<h1>Commentaires</h1>
-<h3>Comments</h3>
-<%= render partial: 'comments/form' %>
-<%= render partial: 'gossips/comment', collection: @gossip.comments.reverse %>
+<div class="jumbotron">
+  <h3>Comments (<%= @gossip.comments.size %>)</h3>
+    <h3>Comments</h3>
+
+<div class="row">
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">        
+        <p class="card-text"> <%= render partial: 'comments/form' %></p>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Comments</h5>
+        <%= render partial: 'gossips/comment', collection: @gossip.comments.reverse %>
+      </div>
+    </div>
+  </div>
+</div>

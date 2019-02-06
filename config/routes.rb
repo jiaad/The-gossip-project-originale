@@ -13,6 +13,8 @@ Rails.application.routes.draw do
 
     resources :comments , only:[:new, :create, :show, :edit, :update, :destroy]
   end
+
+  
   resources :city , only: [:show]
 
 

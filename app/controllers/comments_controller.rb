@@ -1,27 +1,28 @@
 class CommentsController < ApplicationController
-  def new
-     @comment = Comment.new
-  end
-
   def create
-    @Comment.new(content: params[:content])
-    if @comment.save
-    flash[:success] = "ah we t trop fort"
-    redirect_to '/gossips/'
-    else
-      flash[:success] = "NOOOOOOON"
-    end
+  @comment = Comment.new
+  @comment = Comment.new(comment_params)
+  @comment.gossip_id = params[:gossip_id]
+  @comment.save
+  redirect_to gossip_path(@comment.gossip)
   end
-
-  def show
-  end
-
-  def edit
-  end
-
-  def update
+  def destroy
+    @comment = Comment.find(params[:id])
+    @Comment.destroy
+    redirect_to "/gossips"
   end
 
   def destroy
+    @gossip = Gossip.find(params[:gossip_id])
+    @comment = @gossip.comments.find(params[:id])
+    @comment.destroy
+    redirect_to gossip_path(@gossip)
   end
+
+
+  
+  def comment_params
+    params.require(:comment).permit(:author_name, :content)
+  end
+
 end

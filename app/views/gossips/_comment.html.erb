@@ -1,4 +1,11 @@
-<div>
+<div class="bg-secondary">
   <h4>Comment by <%= comment.author_name %></h4>
   <p class="comment"><%= comment.content %></p>
+  <p>Posted <%= distance_of_time_in_words(comment.gossip.created_at, comment.created_at) %> later</p>
+
+  <%= link_to 'Delete', [comment.gossip, comment], method: :delete, class: "button is-danger", data: { confirm: 'Are you sure?' } %>
+  <hr style="width: 100%; color: black; height: 1px; background-color:black;" />
+
+  
+
 </div>
