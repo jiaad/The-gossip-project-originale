@@ -30,15 +30,40 @@ class GossipsController < ApplicationController
   end
 #===================
   def edit
-
+    i = params[:id].to_i
+    @gossip = Gossip.find(i)
   end
 #===================
   def update
+    # @gossip = Gossip.new(title: params[:title], content: params[:content], user_id: rand(40..48))
 
+    # @gossip = Gossip.find(params[:id].to_i)
+    # if @gossip.update(user_params)
+    # redirect_to "/gossips"
+    # else
+    #   puts "="*90
+    #  puts @gossip.errors.full_messages
+    #   puts "="*90
+    # # render :edit
+    # end
+    @gossip = Gossip.find(params[:id])
+    puts params.inspect
+    # if @gossip.update(title: params[:title], content: params[:content])
+    #   redirect_to "/gossips"
+    # end
+    gossip_params = params.require(:gossip).permit(:title, :content)
+    if @gossip.update(gossip_params)
+      flash[:success] = "Welcome to the Sample App!"
+      redirect_to "/gossips"
+    else
+
+    end
   end
 #===================
   def destroy
-
+    @gossip = Gossip.find(params[:id])
+    @gossip.destroy
+    redirect_to "/gossips"
   end
 
 end

@@ -1,0 +1,17 @@
+<% if @gossip.errors.any? %>
+<div class="alert alert-danger text-center" role="alert">
+  oh emanuel macrooooon
+  oh teteu de connnnnn
+  oh va tout casser chez toiiiiii
+</div>
+<% else %>
+<% end %>
+
+
+<h3>Update Gossip Details</h3>
+<%= form_with model: @gossip do |form| %>
+  <%= form.text_field  :title, value: "#{@gossip.title}" %><br>
+  <%= form.text_field :content, value: "#{@gossip.content}" %>
+
+  <%= form.submit %>
+<% end %>
