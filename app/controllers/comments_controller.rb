@@ -19,6 +19,11 @@ class CommentsController < ApplicationController
     redirect_to gossip_path(@gossip)
   end
 
+  def edit
+    @gossip = Gossip.find(params[:gossip_id])
+    @comment = @gossip.comments.find(params[:id])
+  end
+
 
   
   def comment_params
