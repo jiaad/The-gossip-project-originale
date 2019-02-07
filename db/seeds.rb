@@ -11,7 +11,7 @@
  end 
 
 10.times do |i|
-  user = User.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email:Faker::Internet.email  ,age: rand(20..30) , descryption: Faker::HitchhikersGuideToTheGalaxy.marvin_quote, city: City.all.sample)
+  user = User.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email:Faker::Internet.email  ,age: rand(20..30) , description: Faker::HitchhikersGuideToTheGalaxy.marvin_quote, city: City.all.sample)
   #Gossip.create(content: Faker::Name.first_name)
 end
 
