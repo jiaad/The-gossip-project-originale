@@ -22,7 +22,6 @@ class GossipsController < ApplicationController
   def show
     i = params[:id].to_i
     @gossip = Gossip.find(i)
-    
     @comment = Comment.new
     @comment.gossip_id = @gossip.id
 
