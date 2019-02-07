@@ -1,7 +1,7 @@
 <h1>Sesssions#new</h1>
 <p>Find me in app/views/sesssions/new.html.erb</p>
 h1>Login</h1>
-<%= form_tag ‘/login’, method: :post do %>
+<%= form_tag '/session', method: :post do %>
 <div>
  <%= label_tag :email %>
  <%= text_field_tag :email%>
@@ -10,5 +10,6 @@ h1>Login</h1>
  <%= label_tag :password %>
  <%= password_field_tag :password %>
 </div>
- <%= submit_tag “Submit” %>
+
+ <%= submit_tag "Submit" %>
 <%end%>

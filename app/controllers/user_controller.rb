@@ -23,7 +23,7 @@ class UserController < ApplicationController
       puts @user.errors.full_messages
       puts "="*90
       flash[:warning] = 'abuseur'
-      redirect_to '/signup'
+      redirect_to '/gossips/'
     end
   end
 

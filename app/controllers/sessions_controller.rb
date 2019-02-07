@@ -1,5 +1,6 @@
-class SesssionsController < ApplicationController
+class SessionsController < ApplicationController
   def new
+    @user = User.new
   end
 
   def create
@@ -7,17 +8,17 @@ class SesssionsController < ApplicationController
   if @user && @user.authenticate(params[:password])
     session[:user_id] = @user.id
     flash[:success] = "Successfully Logged In!"
-    redirect_to ‘/contacts’
+    redirect_to '/gossips'
   else
     flash[:warning] = "Invalid Username or Password"
-    redirect_to ‘/login’
+    redirect_to '/login'
   end
 end
 
   def destroy
-    session[:user_id] = nil
+  session[:user_id] = nil
   flash[:success] = "Successfully Logged Out!"
-  redirect_to ‘/login’
+  redirect_to '/login'
   end
 
 end

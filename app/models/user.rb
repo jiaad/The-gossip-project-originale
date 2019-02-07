@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  has_secure_password
   belongs_to :city
   # has_many :gossips
   has_many :gossips
@@ -9,5 +10,4 @@ class User < ApplicationRecord
   validates  :description, presence: true
   validates  :age, presence: true
   validates  :password, presence: true
-  has_secure_password
 end

@@ -1,10 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'sesssions/new'
-  get 'sesssions/create'
-  get 'sesssions/destroy'
-  get 'user/create'
-  get 'user/new'
   get '/', to: 'home_page#index'
 
   get 'gossips/user/:user_id', to: 'user_page#user_show'
@@ -22,9 +17,11 @@ Rails.application.routes.draw do
   
   resources :city , only: [:show]
   get '/signup', to: 'user#new'
-  post '/user', to: 'user#create'
-  get '/login', to: 'sessions#new'
-  post '/login', to: 'sessions#create'
-  get  '/logout', to: 'sessions#destroy'
+  # post '/user', to: 'user#create'
+  # get '/login', to: 'sessions#new'
+  # post '/login', to: 'sessions#create'
+  # get  '/logout', to: 'sessions#destroy'
+
+resources :sessions, only: [:new, :destroy, :create ]
 
 end
