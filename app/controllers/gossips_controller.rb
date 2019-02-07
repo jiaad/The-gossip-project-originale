@@ -4,9 +4,8 @@ class GossipsController < ApplicationController
   end
   
   def create
-    @user = User.find(params[:id])
-    
-    @gossip = Gossip.new(title: params[:title], content: params[:content], user_id: rand(40..48))
+    # @user = User.find(params[:id])
+    @gossip = Gossip.new(title: params[:title], content: params[:content], user_id:8 )
     if @gossip.save#(validate: false)
       redirect_to "/"
       flash[:success] = "ah we t trop fort"
